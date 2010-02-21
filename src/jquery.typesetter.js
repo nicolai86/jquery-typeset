@@ -27,6 +27,20 @@ Version: 1.0.0
   $.fn.typeset = function(_ts, _do, _undo) {
     var timings = _ts;
     
+    var redo = _do;
+    if (_do == undefined) {
+      redo = function(sel) {
+        $(sel).selector.css('display','block');
+      }
+    }
+    
+    var undo = _undo;
+    if (_undo == undefined) {
+      undo = function(sel) {
+        $(sel).selector.hide();
+      }
+    }
+    
     timings.sort(function(a, b) {
       if (a.time < b.time) {
         return -1;
@@ -50,22 +64,22 @@ Version: 1.0.0
         
         if (current < first.time) {
           while(pos >= 0) {
-            _undo(timings[pos]);
+            undo(timings[pos]);
             pos -= 1;
           }
         } else if (current > last.time) {
           while (pos < timings.length) {
-            _do(timings[pos]);
+            redo(timings[pos]);
             pos += 1;
           }
         } else {
           while (current < next.time) {
-            _undo(next);
+            undo(next);
             pos -= 1;
             next = timings[pos];
           }
           while (current > next.time) {
-            _do(next);
+            redo(next);
             pos += 1;
             next = timings[pos];
           }

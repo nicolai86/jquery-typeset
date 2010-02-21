@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>jQuery typesetter plugin sample</title>
+    <style type="text/css">
+      .hidden { display: none; }
+      .float { float: left; }
+      .tune { background-image: url('./tune.png'); height: 100px; }
+    </style>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery.typesetter.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var timings = new Array();
+        
+        // timings for the notes. I'm bad at timing ;-)
+        timings.push({ time: 0.4 , selector: $(".t2")});
+        timings.push({ time: 0.7 , selector: $(".t3")});
+        timings.push({ time: 1.3 , selector: $(".t4")});
+        timings.push({ time: 1.3 , selector: $(".t5")});
+        timings.push({ time: 1.5 , selector: $(".t6")});
+        timings.push({ time: 1.7 , selector: $(".t7")});
+        timings.push({ time: 2.4 , selector: $(".t8")});
+        timings.push({ time: 2.7 , selector: $(".t9")});
+        timings.push({ time: 2.9 , selector: $(".t10")});
+        timings.push({ time: 3.1 , selector: $(".t11")});
+        timings.push({ time: 3.3 , selector: $(".t12")});
+        timings.push({ time: 3.6 , selector: $(".t13")});
+        
+        $("#tune").typeset(timings);
+      });
+    </script>
+  </head>
+  <body>
+    jQuery typesetter plugin sample.
+    <div>
+      <audio id="tune" type='audio/ogg' src="./tune.ogg" controls autobuffer>
+        Your browser does not support the <code>audio</code> element.  
+      </audio>
+    </div>
+    <div style="width: 140px;" class="tune float"></div>
+    <div style="width: 15px; background-position: -140px 0px;" class="t1 tune float"></div>
+    <div style="width: 30px; background-position: -155px 0px;" class="hidden t2 tune float"></div>
+    <div style="width: 25px; background-position: -185px 0px;" class="hidden t3 tune float"></div>
+    <div style="width: 25px; background-position: -210px 0px;" class="hidden t4 tune float"></div>
+    <div style="width: 20px; background-position: -235px 0px;" class="hidden t5 tune float"></div>
+    <div style="width: 20px; background-position: -255px 0px;" class="hidden t6 tune float"></div>
+    <div style="width: 25px; background-position: -275px 0px;" class="hidden t7 tune float"></div>
+    <div style="width: 35px; background-position: -300px 0px;" class="hidden t8 tune float"></div>
+    <div style="width: 20px; background-position: -335px 0px;" class="hidden t9 tune float"></div>
+    <div style="width: 20px; background-position: -355px 0px;" class="hidden t10 tune float"></div>
+    <div style="width: 25px; background-position: -375px 0px;" class="hidden t11 tune float"></div>
+    <div style="width: 20px; background-position: -400px 0px;" class="hidden t12 tune float"></div>
+    <div style="width: 50px; background-position: -420px 0px;" class="hidden t13 tune float"></div>
+  </body> 
+</html>
