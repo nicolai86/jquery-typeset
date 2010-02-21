@@ -14,14 +14,14 @@
       // this will display .mydiv after the first second
       var timings = new Array({ time: 1.0, selector: '.mydiv‘});
       
-      // connect your timings with your audio tag and two functions to handle re- and undo.
+      // connect your timings with your audio tag
       $("#my_audio_tag").typeset(timings);
     });
     
   Using the HTML5 audio tag controls you can play your audio file and jQuery typesetter will
   make sure that all your DOM elements are displayed at the right time.
   
-  You can roll your own by specifying re- and undo functions:
+  You can roll your own re- and undo functions, to add small effects and the like:
   
     $(document).ready(function() {
       var timings = new Array({ time: 1.0, selector: '.mydiv', display: 'inline' });
